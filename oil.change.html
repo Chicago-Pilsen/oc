@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    /* Add page load animation */
+    body {
+        animation: pageLoad 1.5s ease-out;
+    }
+
+    @keyframes pageLoad {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Add floating animation to headings */
+    h1, h2, h3 {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Add hover glow effect to links */
+    a {
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        text-shadow: 0 0 10px rgba(0,123,255,0.5);
+        color: #0056b3;
+    }
+</style>
+<script>
+    // Function to handle form submission
+    function scheduleService() {
+        // Get form values
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        
+        // Basic validation
+        if (!name || !phone) {
+            alert('Please fill in all required fields');
+            return;
+        }
+        
+        // You could add AJAX call here to submit to server
+        alert('Thank you for scheduling service! We will contact you shortly.');
+    }
+
+    // Add animation to service steps when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-step').forEach((step) => {
+            observer.observe(step);
+        });
+    });
+</script>
+<style>
+    /* Add smooth animations */
+    .service-step {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .service-step:nth-child(1) { animation-delay: 0.2s; }
+    .service-step:nth-child(2) { animation-delay: 0.4s; }
+    .service-step:nth-child(3) { animation-delay: 0.6s; }
+
+    h1, h2 {
+        position: relative;
+        overflow: hidden;
+    }
+
+    h1::after, h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+        transform: translateX(-100%);
+        animation: slideIn 0.8s ease forwards;
+    }
+
+    @keyframes slideIn {
+        to {
+            transform: translateX(0);
+        }
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Oil Change Service - Fernando's Meticulous Auto Repair</title>
+    <style>
+        /* Original styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        /* Cool animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .service-step {
+            transition: transform 0.3s ease;
+        }
+
+        .service-step:hover {
+            transform: translateX(10px);
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1:after, h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #333;
+            animation: slideLine 2s forwards;
+        }
+
+        @keyframes slideLine {
+            to { left: 0; }
+        }
+
+        .contact-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .contact-info:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        a {
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Oil Change Service - Fernando's Meticulous Auto Repair</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5em;
+        }
+        .service-step h3 {
+            color: #444;
+            font-size: 1.2em;
+        }
+        .service-step {
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Professional Oil Change Service</h1>
+
+<div class="service-step">
+    <h2>Our Professional Oil Change Process</h2>
+    <p>At Fernando's Meticulous Auto Repair, we take pride in providing thorough, expert oil change services that extend the life of your vehicle and maintain its optimal performance. When you visit us for an oil change, here's our comprehensive process:</p>
+</div>
+
+<div class="service-step">
+    <h3>1. Initial Vehicle Assessment</h3>
+    <p>Our certified technicians begin by checking your current mileage and service history to ensure we're providing the appropriate service for your vehicle's specific needs. We'll also verify the manufacturer's recommended oil type and filter specifications for your particular make and model.</p>
+</div>
+
+<div class="service-step">
+    <h3>2. Vehicle Preparation</h3>
+    <p>We properly position your vehicle on our service lift to gain safe access to the undercarriage. This ensures both safety and complete access to all necessary components.</p>
+</div>
+
+<div class="service-step">
+    <h3>3. Draining the Old Oil</h3>
+    <p>After the engine has cooled to a safe temperature, we:</p>
+    <ul>
+        <li>Remove the oil fill cap to allow proper drainage</li>
+        <li>Position a professional-grade collection container beneath your vehicle</li>
+        <li>Carefully remove the drain plug to allow old oil to flow out completely</li>
+        <li>Allow sufficient time for thorough drainage, ensuring removal of contaminants</li>
+    </ul>
+</div>
+
+<div class="service-step">
+    <h3>4. Oil Filter Replacement</h3>
+    <p>While the oil drains, we:</p>
+    <ul>
+        <li>Locate and remove your vehicle's old oil filter using specialized tools</li>
+        <li>Clean the filter mounting surface to ensure a proper seal</li>
+        <li>Apply a small amount of fresh oil to the gasket of the new filter</li>
+        <li>Install a premium-quality replacement filter to manufacturer specifications</li>
+    </ul>
+</div>
+
+<div class="service-step">
+    <h3>5. Drain Plug Replacement</h3>
+    <p>We carefully inspect the drain plug and washer for wear, replacing them if necessary, then properly reinstall and torque the drain plug to specifications to prevent leaks or thread damage.</p>
+</div>
+
+<div class="service-step">
+    <h3>6. Adding Premium New Oil</h3>
+    <p>We:</p>
+    <ul>
+        <li>Add the precise amount of high-quality oil recommended for your specific vehicle</li>
+        <li>Use only oil that meets or exceeds manufacturer specifications</li>
+        <li>Carefully measure the quantity to ensure proper engine lubrication</li>
+    </ul>
+</div>
+
+<div class="service-step">
+    <h3>7. Comprehensive Inspection</h3>
+    <p>While servicing your vehicle, our technicians conduct a multi-point inspection including:</p>
+    <ul>
+        <li>Checking all fluid levels</li>
+        <li>Inspecting air and cabin filters</li>
+        <li>Examining belts and hoses for wear or damage</li>
+        <li>Checking tire pressure and condition</li>
+        <li>Testing battery performance</li>
+        <li>Inspecting wiper blades for effectiveness</li>
+    </ul>
+</div>
+
+<div class="service-step">
+    <h3>8. Final Quality Checks</h3>
+    <p>Before completing the service, we:</p>
+    <ul>
+        <li>Replace the oil fill cap securely</li>
+        <li>Start the engine and check for proper oil pressure</li>
+        <li>Inspect carefully for any leaks around the filter or drain plug</li>
+        <li>Verify the oil level using the dipstick</li>
+        <li>Reset your vehicle's oil life monitoring system (if equipped)</li>
+    </ul>
+</div>
+
+<div class="service-step">
+    <h3>9. Service Record and Reminders</h3>
+    <p>We provide:</p>
+    <ul>
+        <li>A detailed record of the service performed</li>
+        <li>A windshield sticker with the date and mileage for your next service</li>
+        <li>Digital service records that help us remind you when future maintenance is due</li>
+    </ul>
+</div>
+
+<div class="service-step">
+    <h2>Why Our Oil Change Service Matters</h2>
+    <p>Regular professional oil changes are crucial for:</p>
+    <ul>
+        <li>Extending engine life by reducing wear on critical components</li>
+        <li>Improving fuel efficiency and performance</li>
+        <li>Preventing costly repairs by identifying potential issues early</li>
+        <li>Maintaining your vehicle's warranty requirements</li>
+        <li>Reducing harmful emissions</li>
+    </ul>
+    <p>At Fernando's Meticulous Auto Repair, we don't just change your oil – we help protect your investment and ensure your vehicle remains reliable for years to come.</p>
+</div>
+
+<div class="contact-info">
+    <h2>Schedule Your Next Service</h2>
+    <p>Call us at <a href="tel:773-680-2671">773-680-2671</a> or visit our website at <a href="https://chicago-pilsen.github.io/on-site-auto-repair/">https://chicago-pilsen.github.io/on-site-auto-repair/</a> to schedule your next professional oil change service.</p>
+    <p>We recommend scheduling maintenance every 6 months or 7,500 miles, whichever comes first, to maintain optimal vehicle performance.</p>
+    <p>Thank you for trusting Fernando's Meticulous Auto Repair with your vehicle maintenance needs.</p>
+</div>
+</body>
+</html>
